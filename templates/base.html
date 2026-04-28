@@ -1,39 +1,42 @@
 <!-- templates/base.html -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    {% load static %}
     <title>
       {% block title %}
         Gestionnaire bibliothèque
       {% endblock %}
     </title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
   </head>
   <body>
-    <header>
+    <header class="d-flex align-self-center justify-content-between">
       <p>Logo</p>
       <p>Gestionnaire de bibliothèque</p>
-      <a href="{% url 'seDeconnecter' %}">Se deconnecter</a>
+      <a href="{% url 'seDeconnecter' %}" class="btn btn-danger">Se deconnecter</a>
     </header>
     <hr />
-    <section>
-      <div>
+    <section class="row">
+      <div class="card col-4">
         <h3>Toal livre</h3>
         <p>29</p>
         <p>7 titres différents</p>
       </div>
-      <div>
+      <div class="card col-4">
         <h3>Adhérents</h3>
         <p>5 membres actifs</p>
       </div>
-      <div>
+      <div class="card col-4">
         <h3>Emprunts en cours</h3>
         <p>3 Non retounés</p>
       </div>
     </section>
     <hr />
     <nav>
-      <ul>
+      <ul class="d-flex gap-4">
         <li>
           <a href="#">Statistiques</a>
         </li>
