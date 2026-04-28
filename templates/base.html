@@ -1,0 +1,61 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      {% block title %}
+        Gestionnaire bibliothèque
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+    <header>
+      <p>Logo</p>
+      <p>Gestionnaire de bibliothèque</p>
+      <a href="{% url 'seDeconnecter' %}">Se deconnecter</a>
+    </header>
+    <hr />
+    <section>
+      <div>
+        <h3>Toal livre</h3>
+        <p>29</p>
+        <p>7 titres différents</p>
+      </div>
+      <div>
+        <h3>Adhérents</h3>
+        <p>5 membres actifs</p>
+      </div>
+      <div>
+        <h3>Emprunts en cours</h3>
+        <p>3 Non retounés</p>
+      </div>
+    </section>
+    <hr />
+    <nav>
+      <ul>
+        <li>
+          <a href="#">Statistiques</a>
+        </li>
+        <li>
+          <a href="#">Adhérents</a>
+        </li>
+        <li>
+          <a href="#">Emprunts</a>
+        </li>
+        <li>
+          <a href="#">Livre</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      {% block content %}
+        <!-- Mitsofoka eto le template miheriter anty template de base ty -->
+      {% endblock %}
+    </main>
+
+    <footer>
+      <p>© 2026 Projet tutoré ASJA</p>
+    </footer>
+  </body>
+</html>
