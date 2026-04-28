@@ -16,5 +16,5 @@ class Emprunt(models.Model):
     date_emprunt = models.DateField(auto_now_add=True)
     date_limite = models.DateField(default=datetime.now() + timedelta(days=15))
     date_retour = models.DateField(null=True)
-    status = models.CharField(choices=STATUT)
+    statut = models.CharField(choices=STATUT)
     remarque = models.TextField()
