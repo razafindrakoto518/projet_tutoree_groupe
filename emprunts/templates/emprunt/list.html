@@ -1,0 +1,24 @@
+
+<div class="w-full">
+  
+    <div>
+      <a href="#">Nouvelle emprunt</a>
+    </div>
+    <table class="space-y-4 w-full">
+
+    {% for emp in emprunt %}
+    <tr class="space-y-2"> 
+       <td>{{emp.ref_livre}}</td>
+       <td>{{emp.adherent}}</td>
+       <td>{{emp.bibliothecaire}}</td>
+       <td>{{emp.date_emprunt}}</td>
+       <td>{{emp.date_limite}}</td>
+       <td>{{emp.date_retour}}</td>
+       <td>{{emp.statut}}</td>
+       <td>{{emp.remarque}}</td>
+
+    </tr>
+    {% endfor %}
+
+    </table>
+</div>
