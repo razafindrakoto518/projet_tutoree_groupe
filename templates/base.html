@@ -6,8 +6,8 @@
     <meta charset="UTF-8" />
     {% load static %}
     <title>
-      {% block title %}
-        Gestionnaire bibliothèque
+      Bibliothèque |{% block title %}
+
       {% endblock %}
     </title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
@@ -44,7 +44,7 @@
           <a href="#">Adhérents</a>
         </li>
         <li>
-          <a href="#">Emprunts</a>
+          <a href="{% url 'listeEmprunt' %}">Emprunts</a>
         </li>
         <li>
           <a href="#">Livre</a>
