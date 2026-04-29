@@ -23,5 +23,5 @@ urlpatterns = [
     path('dashboard/', include('tableau_de_bord.urls')),
     #path('livre/', include('livre.urls')),
     #path('adherent/', include('adherent.urls')),
-    #path('emprunt/', include('emprunt.urls')),
+    path('emprunt/', include('emprunts.urls')),
 ]
