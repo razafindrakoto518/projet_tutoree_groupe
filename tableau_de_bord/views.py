@@ -48,8 +48,8 @@ def index_dashboard(request):
 
     #Formatage pour le graphe emprunts/retours par mois
     #Formater les données pour faciliter leurs utilisation dans le graphe
-    labels = []
-    emprunts_data = []
+    labels = []#Variable pour stocker les labels ['janvier', 'fevrier', ....]
+    emprunts_data = []#Variable pour stocker les données pour emprunts
     retours_dict = {r['mois'].strftime('%b'): r['total']for r in retours_par_mois}
 
     for e in emprunt_par_mois:
@@ -58,7 +58,7 @@ def index_dashboard(request):
         emprunts_data.append(e['total'])
 
     retours_data = [retours_dict.get(label, 0) for label in labels]
-
+    print(labels)
 
     return render(request, 'tableau_de_bord/index.html')
 
