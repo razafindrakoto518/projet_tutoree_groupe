@@ -5,6 +5,44 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Tableau de bord</h1>
-  <p>Eto no misy anle statistique</p>
+  <h1>Statistiques</h1>
+  <p>Analysez les données de votre bibliothèque</p>
+  <div>
+    <span class="card">
+      <h2>Livres par catégorie</h2>
+      <p>Répartition de l'inventaire par catégorie</p>
+      <p>Misy graphe (chart misy statistiques nombre livres par catégorie)</p>
+    </span>
+    <span class="card">
+      <h2>Adhérents par fonction</h2>
+      <p>Distribution des membres par fonction</p>
+      <p>Misy grahe (pie, cercle ) misy pourcentage membres par fonction</p>
+    </span>
+    <span class="card">
+      <h2>Evolution des emprunts</h2>
+      <p>Emprunts et retour sur 7 mois</p>
+    </span>
+    <span class="card">
+      <h2>Emprunts par catégorie</h2>
+      <p>Total des emprunts par type de livre</p>
+    </span>
+  </div>
+  <div class="d-flex flex-row justify-content-between">
+    <span>
+      <h3>Taux de retour</h3>
+      <p>Pourcentage du livres retouné à temps</p>
+    </span>
+    <span>
+      <h3>Durrée Moyenne</h3>
+      <p>[] jours Durrée moyenne d'emprunt</p>
+    </span>
+    <span>
+      <h3>Catégorie populaire</h3>
+      <p>[nom du catégorie] La plus empruntée</p>
+    </span>
+    <span>
+      <h3>Livres en Retard</h3>
+      <p>[Nombre] Nécessitent un suivi</p>
+    </span>
+  </div>
 {% endblock %}
