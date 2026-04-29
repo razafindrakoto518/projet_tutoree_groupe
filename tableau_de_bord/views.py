@@ -60,17 +60,10 @@ def index_dashboard(request):
     retours_data = [retours_dict.get(label, 0) for label in labels]
     
 
-    #Total livre par titre
-    total_livres = Livre.objects.aggregate(total=Sum('quantite'))['total'] or 0 #calculé le nombre des livres
-    #disponibles en additionnant les quantités et en stockant le resulat dans une variable total
-    #aggregate retourne un dictionnaire  {'total' : total }
-    titres_differents = Livre.objects.count() #On compte les différentes titres du livre enregistrer
-
-
-    #Emprunts en cours
-    #Filtration des emprunts avec attribus statut = 'Non retourné
-    emprunts_en_cours = Emprunt.objects.filter(statut='Non retourné')
-    print(emprunts_en_cours)
+    #Emprunts par catégorie
+    emprunt_par_categorie = Emprunt.objects.values('ref_livre__categorie').annotate(total=Count('id')).order_by('ref_livre__categorie')
+    print(emprunt_par_categorie)
+    
     return render(request, 'tableau_de_bord/index.html')
 
 
