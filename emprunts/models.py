@@ -7,7 +7,8 @@ from django.contrib.auth.models import User
 
 STATUT = [
     ('En retard', 'En retard'),
-    ('Retourné', 'Retourné')
+    ('Retourné', 'Retourné'),
+    ('Non retourné', 'Non retourné')
 ]
 class Emprunt(models.Model):
     #
@@ -17,6 +18,10 @@ class Emprunt(models.Model):
     date_emprunt = models.DateField(auto_now_add=True)
     #datetime.now() + timedelta(days=15)  === Limitena 15 jours aorinanle nangalany azy ny date limite
     date_limite = models.DateField(default=datetime.now() + timedelta(days=15))
-    date_retour = models.DateField(null=True)
-    statut = models.CharField(choices=STATUT)
-    remarque = models.TextField()
+    date_retour = models.DateField(blank=True, null=True)
+    statut = models.CharField(choices=STATUT, default='Non retourné')
+    remarque = models.TextField(blank=True, null=True)
+
+
+    def __str__(self):
+        return f"Emprunt n° : {self.pk}"
