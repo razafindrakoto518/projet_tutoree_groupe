@@ -13,4 +13,4 @@ def ajouter_emprunt(request):
         return render(request,'ajouter_emprunt.html',{"form":form})
     else:
         form =EmpruntForm()
-        return render(request,'ajouter_emprunt.html',{"form":form})
+        return render(request,'emprunts/ajouter_emprunt.html',{"form":form})
