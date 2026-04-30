@@ -4,4 +4,4 @@ from .models import Emprunt
 class EmpruntForm(forms.ModelForm):
     class Meta :
         model=Emprunt
-        fields=["ref_livre","adherent","date_retour"]
+        fields=["ref_livre","adherent"]
