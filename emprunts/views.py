@@ -3,8 +3,11 @@ from django.shortcuts import render,redirect
 from .forms import EmpruntForm
 
 def ajouter_emprunt(request):
-    form = EmpruntForm (request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('liste_emprunt')
-    return render(request, 'emprunts/formulaire.html',{'form': form})
+    if request.method == 'POST':
+        form = EmpruntForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('liste_emprunts')
+        else:
+            form = EmpruntForm()
+        return render(request,'ajouter_emprunt.html',{"form":form})
