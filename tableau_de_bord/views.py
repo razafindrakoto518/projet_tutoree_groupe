@@ -16,10 +16,19 @@ def index_dashboard(request):
     #.annotate(total_quantite=Sum('quantite')) == On additionne la valeur de l'attribut quantite de chaque categorie regroupé
     #Puis on arrange par catégorie
     quantite_par_categorie = Livre.objects.values('categorie').annotate(total_quantite=Sum('quantite')).order_by('categorie')
+    labels_livre_categorie = [q['categorie'] for q in quantite_par_categorie]
+    data_llivre_categorie = [q['total_quantite'] for q in quantite_par_categorie]
+    
+    
+    
     #On regroupe les adhérents par fonction puis on crée une variable à la volé effectif total qui
     #contient l'effectif des adhérents groupés par fonction
     adherent_par_fonction = Adherent.objects.values('fonctions').annotate(effectif_total=Count('matricule'))
-    
+    labels_adherent_fonction = [a['fonctions'] for a in adherent_par_fonction]
+    data_adherent_fonction = [a['effectif_total'] for a in adherent_par_fonction]
+
+
+
     
     #On recupère le nombre des emprunts du 7 mois passé
     #Définir un variable pour stocker la date de debut date ajourd'hui - 7 mois
@@ -89,8 +98,15 @@ def index_dashboard(request):
         .filter(date_retour__isnull=False)
         .aggregate(moyenne=Avg(duree))
     )
+    
     duree_moyenne = resultat['moyenne'].days if resultat['moyenne'] else 0
-    print(duree_moyenne)
-    return render(request, 'tableau_de_bord/index.html')
+    
+    
+    return render(request, 'tableau_de_bord/index.html', {
+        'labels_livre_categorie' : labels_livre_categorie,
+        'data_livre_categorie' : data_llivre_categorie,
+        'labels_adherent_fonction' : labels_adherent_fonction,
+        'data_adherent_fonction' : data_adherent_fonction
+    })
 
 
