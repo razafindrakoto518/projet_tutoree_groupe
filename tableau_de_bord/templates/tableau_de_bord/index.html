@@ -11,12 +11,12 @@
     <span class="card">
       <h2>Livres par catégorie</h2>
       <p>Répartition de l'inventaire par catégorie</p>
-      <p>Misy graphe (chart misy statistiques nombre livres par catégorie)</p>
+      <canvas id="livre_par_categorie"></canvas>
     </span>
     <span class="card">
       <h2>Adhérents par fonction</h2>
       <p>Distribution des membres par fonction</p>
-      <p>Misy grahe (pie, cercle ) misy pourcentage membres par fonction</p>
+      <canvas id="adherent_par_fonction"></canvas>
     </span>
     <span class="card">
       <h2>Evolution des emprunts</h2>
@@ -45,4 +45,31 @@
       <p>[Nombre] Nécessitent un suivi</p>
     </span>
   </div>
+  <script>
+
+    //Affichage d'un graphe en baton pour la quantité de livre par catégorie
+    new Chart(document.getElementById('livre_par_categorie'), {
+      type : 'bar',//Type du graphe
+      data: {
+        labels: {{ labels_livre_categorie |safe }},//Les labels sur l'axe de x
+        datasets: [{
+          label: 'Livre par categorie',
+          data: {{ data_livre_categorie | safe }} //Data sur l'axe y
+        }]
+      }
+    });
+
+    //Affichage d'un grph sous forme d'une cercle qui represente la distribution des membres par fonction
+    new Chart(document.getElementById('adherent_par_fonction'), {
+      type : 'doughnut',
+      data: {
+        labels: {{ labels_adherent_fonction |safe }},
+        datasets: [{
+          label: 'Distribution par fonction',
+          data: {{ data_adherent_fonction | safe }}
+        }]
+      }
+    });
+
+  </script>
 {% endblock %}
