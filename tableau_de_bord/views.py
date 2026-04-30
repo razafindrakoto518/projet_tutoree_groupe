@@ -1,8 +1,10 @@
+import datetime
+
 from django.shortcuts import render
 from livres.models import Livre
 from adherents.models import Adherent
 from emprunts.models import Emprunt
-from django.db.models import Sum, Count
+from django.db.models import F, Avg, DurationField, ExpressionWrapper, Sum, Count
 from django.db.models.functions import TruncMonth
 from django.utils import timezone
 from dateutil.relativedelta import relativedelta
@@ -62,8 +64,33 @@ def index_dashboard(request):
 
     #Emprunts par catégorie
     emprunt_par_categorie = Emprunt.objects.values('ref_livre__categorie').annotate(total=Count('id')).order_by('ref_livre__categorie')
-    print(emprunt_par_categorie)
+
+
+
+    #Livres en retard
+    livres_en_retard = Emprunt.objects.filter(date_limite__lt=timezone.now().date(), statut='Non retourné')
     
+    #Categories populaire
+    categorie_populaire = Emprunt.objects.values('ref_livre__categorie').annotate(total=Count('id')).order_by('-total').first()
+
+
+    #Taux de retour
+    total_emprunts_retournee = Emprunt.objects.filter(statut='Retourné').count()
+    total_emprunts = Emprunt.objects.count()
+    taux_de_retour = 0;
+    if total_emprunts:
+        taux_de_retour = ((total_emprunts_retournee / total_emprunts) * 100).__round__(2)#Arrondir deux chiffres après la virgule
+
+
+    #Durrée moyenne d'un emprunt
+    duree = ExpressionWrapper(F('date_retour') - F('date_emprunt'), output_field=DurationField())
+    resultat = (
+        Emprunt.objects
+        .filter(date_retour__isnull=False)
+        .aggregate(moyenne=Avg(duree))
+    )
+    duree_moyenne = resultat['moyenne'].days if resultat['moyenne'] else 0
+    print(duree_moyenne)
     return render(request, 'tableau_de_bord/index.html')
 
 
