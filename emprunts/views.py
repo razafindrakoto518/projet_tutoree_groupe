@@ -11,3 +11,6 @@ def ajouter_emprunt(request):
         else:
             form = EmpruntForm()
         return render(request,'ajouter_emprunt.html',{"form":form})
+    else:
+        form =EmpruntForm()
+        return render(request,'ajouter_emprunt.html',{"form":form})
