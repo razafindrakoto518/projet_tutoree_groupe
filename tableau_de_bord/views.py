@@ -1,4 +1,5 @@
 import datetime
+import json
 
 from django.shortcuts import render
 from livres.models import Livre
@@ -59,29 +60,32 @@ def index_dashboard(request):
 
     #Formatage pour le graphe emprunts/retours par mois
     #Formater les données pour faciliter leurs utilisation dans le graphe
-    labels = []#Variable pour stocker les labels ['janvier', 'fevrier', ....]
+    labels_emprunt_mois = []#Variable pour stocker les labels ['janvier', 'fevrier', ....]
     emprunts_data = []#Variable pour stocker les données pour emprunts
     retours_dict = {r['mois'].strftime('%b'): r['total']for r in retours_par_mois}
 
     for e in emprunt_par_mois:
         mois_label = e['mois'].strftime('%b')
-        labels.append(mois_label)
+        labels_emprunt_mois.append(mois_label)
         emprunts_data.append(e['total'])
 
-    retours_data = [retours_dict.get(label, 0) for label in labels]
+    retours_data = [retours_dict.get(label, 0) for label in labels_emprunt_mois]
     
+
+
 
     #Emprunts par catégorie
     emprunt_par_categorie = Emprunt.objects.values('ref_livre__categorie').annotate(total=Count('id')).order_by('ref_livre__categorie')
-
+    labels_emprunt_categorie = [e['ref_livre__categorie'] for e in emprunt_par_categorie]
+    data_emprunt_categorie = [e['total'] for e in emprunt_par_categorie]
 
 
     #Livres en retard
-    livres_en_retard = Emprunt.objects.filter(date_limite__lt=timezone.now().date(), statut='Non retourné')
+    livres_en_retard = Emprunt.objects.filter(date_limite__lt=timezone.now().date(), statut='Non retourné').count()
     
     #Categories populaire
-    categorie_populaire = Emprunt.objects.values('ref_livre__categorie').annotate(total=Count('id')).order_by('-total').first()
-
+    categorie_populaire = Emprunt.objects.values('ref_livre__categorie').annotate(total=Count('id')).order_by('-total').first()['ref_livre__categorie']
+    
 
     #Taux de retour
     total_emprunts_retournee = Emprunt.objects.filter(statut='Retourné').count()
@@ -103,10 +107,20 @@ def index_dashboard(request):
     
     
     return render(request, 'tableau_de_bord/index.html', {
-        'labels_livre_categorie' : labels_livre_categorie,
-        'data_livre_categorie' : data_llivre_categorie,
-        'labels_adherent_fonction' : labels_adherent_fonction,
-        'data_adherent_fonction' : data_adherent_fonction
+        'labels_livre_categorie' : json.dumps(labels_livre_categorie),
+        'data_livre_categorie' : json.dumps(data_llivre_categorie),
+        'labels_adherent_fonction' : json.dumps(labels_adherent_fonction),
+        'data_adherent_fonction' : json.dumps(data_adherent_fonction),
+        'labels_emprunt_mois' : json.dumps(labels_emprunt_mois),
+        'emprunts_data' : json.dumps(emprunts_data),
+        'retours_data' : json.dumps(retours_data),
+        'labels_emprunt_categorie' : json.dumps(labels_emprunt_categorie),
+        'data_emprunt_categorie' : json.dumps(data_emprunt_categorie),
+        'taux_de_retour' : taux_de_retour,
+        'duree_moyenne' : duree_moyenne,
+        'categorie_populaire' : categorie_populaire,
+        'livres_en_retard' : livres_en_retard
+
     })
 
 
