@@ -6,7 +6,7 @@
     <title>confirmer l'ajout</title>
 </head>
 <body>
-    <h1>Confirmer l'emprunt</h1>
+    <h2>Confirmer l'emprunt</h2>
     <p><strong>Livre:</strong>{{form.adherents.value}}</p>
     <form method="POST" action="{% url 'confirmer_emprunt'%}">
         {% csrf_token %}
