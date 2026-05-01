@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_crontab',#Application utilisé pour les tâches programmés en avant (envoi email)
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -131,3 +132,10 @@ STATICFILES_DIRS = [
 LOGIN_URL = '/'
 LOGIN_REDIRECT_URL = 'dashboard/'
 LOGOUT_REDIRECT_URL = '/'
+
+
+
+#on execute chaque jour à 8h00
+CRONJOBS = [
+    ('0 8 * * *', 'bibliotheque.tasks.envoyer_rappels')
+] 
