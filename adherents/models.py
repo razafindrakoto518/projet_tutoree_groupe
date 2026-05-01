@@ -12,7 +12,8 @@ class Adherent(models.Model):
     matricule = models.CharField(primary_key=True)
     nom = models.CharField(max_length=50)
     prenom = models.CharField(max_length=100)
-    email = models.EmailField()
+    #unique = true  Ceci evite la duplication des adresse email
+    email = models.EmailField(unique=True)
     fonctions = models.CharField(choices=FONCTIONS)
 
 
