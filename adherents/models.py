@@ -14,3 +14,7 @@ class Adherent(models.Model):
     prenom = models.CharField(max_length=100)
     email = models.EmailField()
     fonctions = models.CharField(choices=FONCTIONS)
+
+
+    def __str__(self):
+        return f"{self.matricule} -- {self.nom}"
