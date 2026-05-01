@@ -9,7 +9,7 @@ def envoyer_rappels():
     dans_3_jours = ajourd_hui + timedelta(days=3)
 
     emprunts_bientot = Emprunt.objects.filter(
-        statut='Non retourné'
+        statut='Non retourné',
         date_limite=dans_3_jours
     )
 
