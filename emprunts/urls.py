@@ -4,5 +4,4 @@ from . import views
 
 urlpatterns = [
     path('ajouter/', views.ajouter_emprunt, name= 'ajouter_emprunt'),
-    path('confimer/',views.confirmer_emprunt,name='confirmer_emprunt'),
 ]
