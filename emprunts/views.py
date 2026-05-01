@@ -6,8 +6,9 @@ def ajouter_emprunt(request):
     if request.method == 'POST':
         form = EmpruntForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('liste_emprunts')
+           #form.save()
+            request.session['emprut_data']=request.POST
+            return render(request,'emprunts/confirmation.html',{'form':form})
         else:
             form = EmpruntForm()
         return render(request,'ajouter_emprunt.html',{"form":form})
