@@ -34,7 +34,7 @@ def enregistrer_emprunt(request):
                 emprunt.bibliothecaire = request.user#On remplie le champ bibliothecaire par l'utilisateur connecté
                 emprunt.save()#on enregistre définitivement
 
-                livre.quantite -= 1#On soustrait 1 la quantite en stock du livre
+                livre.quantite -= 1#On soustrait 1 la quantite du livre en stock
                 livre.save()#on enregistre le changement
 
                 return redirect('listeEmprunt')#Rédiriger vers la page liste des emprunts
