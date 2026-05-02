@@ -20,7 +20,7 @@ class Emprunt(models.Model):
     date_limite = models.DateField(default=datetime.now() + timedelta(days=15))
     date_retour = models.DateField(blank=True, null=True)
     statut = models.CharField(choices=STATUT, default='Non retourné')
-    remarque = models.TextField(blank=True, null=True)
+    remarque = models.TextField(blank=True, default=" ")
 
 
     def __str__(self):
