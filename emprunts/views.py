@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 from livres.models import Livre
 from .models import Emprunt
-from .forms import EmpruntForm
+from .forms import EmpruntForm, EnregistrementRetourEmprunt
 
 @login_required
 def liste_emprunt(request):
@@ -44,4 +44,18 @@ def enregistrer_emprunt(request):
         form = EmpruntForm()
         return render(request, "emprunts/ajouter_emprunt.html", {
             'form' : form
+        })
+
+
+
+def retourner_emprunt(request, id):
+    emprunt = get_object_or_404(Emprunt, id=id)
+    if request.method == "POST":
+        form = EnregistrementRetourEmprunt(request.POST, instance=emprunt)
+        
+    else:
+        form = EnregistrementRetourEmprunt(instance=emprunt)
+        return render(request, "emprunts/retour_emprunt.html", {
+            'form' : form,
+            'emprunt' : emprunt
         })
