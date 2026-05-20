@@ -13,8 +13,8 @@ CATEGORIE = [
     ('Mécanique','Mécanique'),
     ('Science agronomique','Science agronomique'),
     ('Mécanique','Mécanique'),
-    ('Production Animale','Production Animale')
-
+    ('Production Animale','Production Animale'),
+    ('Science', 'Science')
 ]
 
 
