@@ -1,65 +1,65 @@
 reference,auteur,titre,quantite,categorie
-A0001,Michel ROUZE,OPPENHEIMER et la bombe atomique,13,CodeA
-A0002,Charles Nicolleet, La biologie conquérante,15,CodeA
-A0003,Charles DARWIN, L'origine desespèces au moyen de la sélection naturelle,15,CodeA
-A0004,Jean CHARON, La conception de l'univers depuis 25 siècles,15,CodeA
-A0005,M.ORAE-E.CARRON.C.DURAND, Sciences appliquées: classe de fin d'etudes,153,CodeA
-A0006,Rapido Bae Terminale S, Science de la Vie et de la Terre,12,CodeA
-A0007,M.ORAE-J.RAFFIN, anatomie physiologie hygiène,15,CodeA
-A0008,ARISTOTE, Météorologique,153,CodeA
-A0009,Jean-François Duval, Et vous faites-vous semblant d'exister ? et Sur la route avec Marylou,13,CodeA
-A0010,Ministere de relation exterieur,DossierD-Lesdossiersd UBIOGAZ Stratégie dedéveloppement-3étudedecas,153,CodeA
-A0014,James AKRE ,L'alimentation infantile bases physiologiques,15,CodeA
-A0015,D.BRIANEABF-J.DCAT-CTFT, Guide théchinique de la carbonisation.Fabrication charbon de bois,15,CodeA
-A0016,Alexandre ROJEY-Bernand DURAND,le gaz naturel: Production Traitement Transport,13,CodeA
-A0017,Aurélien BOUTAUD-Natacha GODRAN, L'empreinte écologique,14,CodeA
-A0018,André PICHOT, La naissance de la science,17,CodeA
-A0019,André PICHOT,La naissance de la science-2.Gréce présocratique essais INÉDIT,20,CodeA
-A0020,Jean-Paul DELÉAGE,Une histoire de l'écologie,13,CodeA
-A0021,J.-F.Braunstein,L'histoire des sciences Méthode,7,CodeA
-A0022,Camille FLAMMARION, Astronomie populaire,7,CodeA
-A0023,Evry SCHATZMAN, Structuredel'univers,8,CodeA
-A0024,Paul CESARIFLAMMARION,La valeur de la connaissance scientifique,13,CodeA
-A0025,Fomagri,Formation pour le développement rural,15,CodeA
-A0026,CRET,Collection technique Américaines,20,CodeA
-A0027,H.HESLOT,Perspectives d'application industruelles du Génie génétique,13,CodeA
-A0028,O.R.S.T.O.MParis,Biologie marine et exploitation de ressources de l'Océan Indien Occidental,13,CodeA
-A0029,PTM,Le personnel de cuisine,5,CodeA
-A0030,Dr Smith,Sécurité et hygiène dans la laboratoire de chimie,13,CodeA
-A0031,PTM,Conducteur d'engins chantier,153,CodeA
-A0032,PTM, Prévention de trouble pour les personne soignant dans les hôpitaux,13,CodeA
-A0033,IPAM, La guide de la famille N°191:'Petit Atlas:Afrique-Océan Indien-Haïti',10,CodeA
-A0036,JEAN-Huges BARTHELEMY Simodonoul,Encyclopédis génétique,13,CodeA
-A0037,Henri ATLAN - Mylène Botbol-Baum,Des embroyons et des hommes,23,CodeA
-A0038,Jean GAYON - Armandde RICQLES, Les fonctions des organismes aux artefactes,13,CodeA
-A0039,Philip KITCHER,Science Verité et Démocratie,13,CodeA
-A0045,IPAM,Un guide pour l'employeur et les partenaires sociaux,53,CodeA
-A0048,SFPF emploi,Prévention du mal de dos chez le maçon,13,CodeA
-A0049,IPAM, La guide de la famille N°192: 'eau et la santé',3,CodeA
-A0051,TMS, Prévention des troubles musculo-squelettiques,15,CodeA
+A0001,Michel ROUZE,OPPENHEIMER et la bombe atomique,13,Science
+A0002,Charles Nicolleet, La biologie conquérante,15,Science
+A0003,Charles DARWIN, L'origine desespèces au moyen de la sélection naturelle,15,Science
+A0004,Jean CHARON, La conception de l'univers depuis 25 siècles,15,Science
+A0005,M.ORAE-E.CARRON.C.DURAND, Sciences appliquées: classe de fin d'etudes,153,Science
+A0006,Rapido Bae Terminale S, Science de la Vie et de la Terre,12,Science
+A0007,M.ORAE-J.RAFFIN, anatomie physiologie hygiène,15,Science
+A0008,ARISTOTE, Météorologique,153,Science
+A0009,Jean-François Duval, Et vous faites-vous semblant d'exister ? et Sur la route avec Marylou,13,Science
+A0010,Ministere de relation exterieur,DossierD-Lesdossiersd UBIOGAZ Stratégie dedéveloppement-3étudedecas,153,Science
+A0014,James AKRE ,L'alimentation infantile bases physiologiques,15,Science
+A0015,D.BRIANEABF-J.DCAT-CTFT, Guide théchinique de la carbonisation.Fabrication charbon de bois,15,Science
+A0016,Alexandre ROJEY-Bernand DURAND,le gaz naturel: Production Traitement Transport,13,Science
+A0017,Aurélien BOUTAUD-Natacha GODRAN, L'empreinte écologique,14,Science
+A0018,André PICHOT, La naissance de la science,17,Science
+A0019,André PICHOT,La naissance de la science-2.Gréce présocratique essais INÉDIT,20,Science
+A0020,Jean-Paul DELÉAGE,Une histoire de l'écologie,13,Science
+A0021,J.-F.Braunstein,L'histoire des sciences Méthode,7,Science
+A0022,Camille FLAMMARION, Astronomie populaire,7,Science
+A0023,Evry SCHATZMAN, Structuredel'univers,8,Science
+A0024,Paul CESARIFLAMMARION,La valeur de la connaissance scientifique,13,Science
+A0025,Fomagri,Formation pour le développement rural,15,Science
+A0026,CRET,Collection technique Américaines,20,Science
+A0027,H.HESLOT,Perspectives d'application industruelles du Génie génétique,13,Science
+A0028,O.R.S.T.O.MParis,Biologie marine et exploitation de ressources de l'Océan Indien Occidental,13,Science
+A0029,PTM,Le personnel de cuisine,5,Science
+A0030,Dr Smith,Sécurité et hygiène dans la laboratoire de chimie,13,Science
+A0031,PTM,Conducteur d'engins chantier,153,Science
+A0032,PTM, Prévention de trouble pour les personne soignant dans les hôpitaux,13,Science
+A0033,IPAM, La guide de la famille N°191:'Petit Atlas:Afrique-Océan Indien-Haïti',10,Science
+A0036,JEAN-Huges BARTHELEMY Simodonoul,Encyclopédis génétique,13,Science
+A0037,Henri ATLAN - Mylène Botbol-Baum,Des embroyons et des hommes,23,Science
+A0038,Jean GAYON - Armandde RICQLES, Les fonctions des organismes aux artefactes,13,Science
+A0039,Philip KITCHER,Science Verité et Démocratie,13,Science
+A0045,IPAM,Un guide pour l'employeur et les partenaires sociaux,53,Science
+A0048,SFPF emploi,Prévention du mal de dos chez le maçon,13,Science
+A0049,IPAM, La guide de la famille N°192: 'eau et la santé',3,Science
+A0051,TMS, Prévention des troubles musculo-squelettiques,15,Science
 A0060,Nathalie BEAU,J'AI REPONSE A TOUT,13,DROIT
-A0070,SPF,Bonne pratique de sécurité dans le secteur agricole,13,CodeA
-A0071,SPF,Prévention incendie dans l'agriculture et l'horticulture,13,CodeA
-A0073,SPF,Manuel pour l'amélioration des conditions de travail des aides familiales,13,CodeA
-A0075,Dr RAJERISON, Ny sakafo ara-pahasalamana,13,CodeA
-A0078,DIDIEROT,Faut-il vraiment cloner l'homme?,8,CodeA
-A0079,Galileo GALILEI,Dialogue sur les deux grand systemes du monde,3,CodeA
-A0081,Jean LECHAT,Analyse et synthese,3,CodeA
-A0083,Pierre BOURGEOIS,Comment soigner avec l'argile?,13,CodeA
-A0084,Abel REY,L'apogée de la science technique grec,4,CodeA
-A0085,Christian NGO,L'énergie : resource technologie et environnement,5,CodeA
-A0088,N.L.BROWN,Les énergie renouvelable: technique d'utilisation du tiers monde rural,3,CodeA
-A0089,Jacque DUBOIS,La dynamique non luneaire,153,CodeA
+A0070,SPF,Bonne pratique de sécurité dans le secteur agricole,13,Science
+A0071,SPF,Prévention incendie dans l'agriculture et l'horticulture,13,Science
+A0073,SPF,Manuel pour l'amélioration des conditions de travail des aides familiales,13,Science
+A0075,Dr RAJERISON, Ny sakafo ara-pahasalamana,13,Science
+A0078,DIDIEROT,Faut-il vraiment cloner l'homme?,8,Science
+A0079,Galileo GALILEI,Dialogue sur les deux grand systemes du monde,3,Science
+A0081,Jean LECHAT,Analyse et synthese,3,Science
+A0083,Pierre BOURGEOIS,Comment soigner avec l'argile?,13,Science
+A0084,Abel REY,L'apogée de la science technique grec,4,Science
+A0085,Christian NGO,L'énergie : resource technologie et environnement,5,Science
+A0088,N.L.BROWN,Les énergie renouvelable: technique d'utilisation du tiers monde rural,3,Science
+A0089,Jacque DUBOIS,La dynamique non luneaire,153,Science
 A0090,G. SAPORTA - Françoise LAVALLARD,L'analyse des données: méthodes et applications,13,DROIT
-A0091,Luc MONTAIGNIE - Ret Robert GALLO,Le sida,5,CodeA
-A0092,François LEPAGE,Element de logique contemmporaine,3,CodeA
-A0097,Anastasios BRENNER,Raison scientifique et valeur humaine,15,CodeA
-A0098,RUPERT CHELDDRAKE,La mémoire de l'univers,1,CodeA
-A0099,CASTERMAN,Exploitation et découverte 'travail et industrie',13,CodeA
-A0103,GeorgeE.DIETER, Engineering design 3rd edition,3,CodeA
-A0104,Laurance VIENNOT, Epistemologie et histoire de la science,3,CodeA
-A0105,Laude DEBOT,Les possibles et les biotechnologie,13,CodeA
-A0106,Francois BERNARDO, cosmologie des fondements théoriques aux observations,4,CodeA
+A0091,Luc MONTAIGNIE - Ret Robert GALLO,Le sida,5,Science
+A0092,François LEPAGE,Element de logique contemmporaine,3,Science
+A0097,Anastasios BRENNER,Raison scientifique et valeur humaine,15,Science
+A0098,RUPERT CHELDDRAKE,La mémoire de l'univers,1,Science
+A0099,CASTERMAN,Exploitation et découverte 'travail et industrie',13,Science
+A0103,GeorgeE.DIETER, Engineering design 3rd edition,3,Science
+A0104,Laurance VIENNOT, Epistemologie et histoire de la science,3,Science
+A0105,Laude DEBOT,Les possibles et les biotechnologie,13,Science
+A0106,Francois BERNARDO, cosmologie des fondements théoriques aux observations,4,Science
 D004,Jacques SCHOEFFLE,Gravimétrie appliqués aux recherches structurales et la prospections pétrolière et minière,6,Science de la Vie et de la Terre
 D008,ELSEVIERSA,Atmosphère et climat,3,Science de la Vie et de la Terre
 D009,ELSEVIERSAS,Tectonique1,7,Science de la Vie et de la Terre

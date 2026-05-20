@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.models import User
 from .models import Adherent, CompteAdherent, Reservation, DetailReservation
 from django.forms import BaseInlineFormSet, ValidationError, inlineformset_factory
 
@@ -92,7 +93,12 @@ class FormulaireInscription(forms.Form):
             raise forms.ValidationError("Les mots de passe ne correspondent pas")
         
         return cleaned_data
-    
+
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if username and User.objects.filter(username=username).exists():
+            raise forms.ValidationError("Ce nom d'utilisateur est déjà pris.")
+        return username
 
 # Formulaire pour la vérification par email
 class VerificationParEmail(forms.Form):

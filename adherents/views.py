@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from .models import Adherent, CompteAdherent, Reservation
 from .forms import FormulaireAjoutAdherent, FormulaireInscription, VerificationParEmail, FormulaireReservation, DetailReservationFormSet, DetailReservationInlineFormSet
 from django.contrib.auth.models import User
+from django.db import IntegrityError
 from django.db.models import Q
 from django.core.mail import send_mail
 import secrets
@@ -131,22 +132,28 @@ def inscription(request):
             # Récupérer la personne autorisée (adhérent)
             personne = Adherent.objects.get(matricule=matricule)
 
-            # Création d'un utilisateur Django associé
-            user = User.objects.create_user(
-                username=username,
-                password=password,
-                email=personne.email,
-            )
+            if User.objects.filter(username=username).exists():
+                form.add_error('username', "Ce nom d'utilisateur est déjà pris.")
+            else:
+                try:
+                    # Création d'un utilisateur Django associé
+                    user = User.objects.create_user(
+                        username=username,
+                        password=password,
+                        email=personne.email,
+                    )
 
-            # Création du compte pour l'adherent
-            CompteAdherent.objects.create(
-                user=user,
-                personne=personne,
-            )
+                    # Création du compte pour l'adherent
+                    CompteAdherent.objects.create(
+                        user=user,
+                        personne=personne,
+                    )
 
-            request.session.pop('otp_code', None)
-            request.session.pop('otp_email', None)
-            return redirect('seConnecter')
+                    request.session.pop('otp_code', None)
+                    request.session.pop('otp_email', None)
+                    return redirect('seConnecter')
+                except IntegrityError:
+                    form.add_error('username', "Ce nom d'utilisateur est déjà pris.")
     else:
         form = FormulaireInscription(
             otp_attendu=otp_attendu,
